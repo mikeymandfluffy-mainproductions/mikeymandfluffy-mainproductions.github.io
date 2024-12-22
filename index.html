@@ -3,10 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work in Progress</title>
+    <title>Mikey's Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1a1a1a, #333);
+            color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: #00bfff;
+        }
+
+        nav {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #00bfff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        nav button:hover {
+            background: #007acc;
+        }
+
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        iframe {
+            margin-top: 20px;
+            width: 350px;
+            height: 500px;
+            border: none;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            background: #111;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <h1>Mikey's Website</h1>
-    <body>This is a placeholder. Mikey's Website is currently a work in progress. Soon, you'll be able to view my socials and play minigames in your web browser! Stay tuned!</body>
+    <nav>
+        <button onclick="showTab('home')">Home</button>
+        <button onclick="showTab('contact')">Contact</button>
+    </nav>
+
+    <div class="content" id="home">
+        <p>Mikey's Website is currently a work in progress. Soon, you'll be able to view my socials and play mini-games inside your browser! Stay tuned!</p>
+    </div>
+
+    <div class="content" id="contact" style="display: none;">
+        <p>If you want to get in contact with me, first join the Discord server below:</p>
+        <iframe src="https://discord.com/widget?id=1166243655259000852&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <p>Then, start a DM with <strong>mikeymandfluffy_mainproductions</strong>. My DMs are open 24/7. Just leave me a DM and I'll try to respond to it as fast as I can.</p>
+    </div>
+
+    <footer>
+        &copy; MikeyM and Fluffy Main Productions 2024
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            document.getElementById('home').style.display = tabId === 'home' ? 'block' : 'none';
+            document.getElementById('contact').style.display = tabId === 'contact' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
