@@ -68,8 +68,8 @@
 
         iframe {
             margin-top: 20px;
-            width: 350px;
-            height: 500px;
+            width: 560px;
+            height: 315px;
             border: none;
         }
 
@@ -107,12 +107,19 @@
         <h1>Fluffy's Website</h1>
         <nav>
             <button onclick="showTab('home')">Home</button>
+            <button onclick="showTab('youtube')">YouTube</button>
             <button onclick="showTab('contact')">Contact</button>
         </nav>
     </div>
 
     <div class="content-box" id="home">
         <p>Fluffy's Website is currently a work in progress. Soon, you'll be able to view my socials and play mini-games inside your browser! Stay tuned!</p>
+    </div>
+
+    <div class="content-box" id="youtube" style="display: none;">
+        <p>If you want to see content like gaming content, joke content, or other extra content, consider checking out <a href="https://www.youtube.com/@MikeyMandFluffyMainProductions" class="button-link" target="_blank">my channel</a>!</p>
+        <p>Latest Video:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vzeYVbmp2-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
     <div class="content-box" id="contact" style="display: none;">
@@ -133,6 +140,7 @@
         function showTab(tabId) {
             document.getElementById('home').style.display = tabId === 'home' ? 'block' : 'none';
             document.getElementById('contact').style.display = tabId === 'contact' ? 'block' : 'none';
+            document.getElementById('youtube').style.display = tabId === 'youtube' ? 'block' : 'none';
         }
     </script>
 </body>
