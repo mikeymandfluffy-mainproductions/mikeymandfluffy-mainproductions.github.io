@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluffy's Website</title>
+    <title>Fluffy's Corner</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -62,7 +62,7 @@
             padding: 20px;
             border-radius: 10px;
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             text-align: center;
         }
 
@@ -92,6 +92,25 @@
             background: #007acc;
         }
 
+        .contact {
+            margin-top: 20px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #00bfff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact button:hover {
+            background: #007acc;
+        }
+
         footer {
             margin-top: auto;
             padding: 10px;
@@ -104,20 +123,30 @@
 </head>
 <body>
     <div class="topbar">
-        <h1>Fluffy's Website</h1>
+        <h1>Fluffy's Corner</h1>
         <nav>
             <button onclick="showTab('home')">Home</button>
+            <button onclick="showTab('games')">Games</button>
             <button onclick="showTab('youtube')">YouTube</button>
             <button onclick="showTab('contact')">Contact</button>
         </nav>
     </div>
 
     <div class="content-box" id="home">
-        <p>Fluffy's Website is currently a work in progress. Soon, you'll be able to view my socials and play mini-games inside your browser! Stay tuned!</p>
+        <h1>Welcome to Fluffy's Corner!</h1>
+        <p>Fluffy's Corner is currently a work in progress. Soon, you'll be able to view Fluffy's socials and play mini-games inside your browser, whether it be random browser games, games we've made or games that were requested!</p>
     </div>
 
+    <div class="content-box" id="games" style= "display: none;">
+        <h1>Uh oh</h1>
+        <p>Looks like Fluffy doesn't have any browser game ideas. We need ideas for browser games, so if you want to suggest some games, feel free to reach out to us!</p>
+        <div class="contact">
+            <button onclick="showTab('contact')">Contact</button>
+        </div>
+    </div>
+    
     <div class="content-box" id="youtube" style="display: none;">
-        <p>If you want to see content like gaming content, joke content, or other extra content, consider checking out <a href="https://www.youtube.com/@MikeyMandFluffyMainProductions" class="button-link" target="_blank">my channel</a>!</p>
+        <p>If you want to see content like gaming content, joke content, or other extra content, consider checking out <a href="https://www.youtube.com/@MikeyMandFluffyMainProductions" class="button-link" target="_blank">our channel</a>!</p>
         <p>Latest Video:</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/vzeYVbmp2-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
@@ -125,11 +154,12 @@
     <div class="content-box" id="contact" style="display: none;">
         <p>If you want to get in contact with me, first join the Fluffy's Community Discord server below:</p>
         <iframe src="https://discord.com/widget?id=1166243655259000852&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        <p>Then, start a DM with <strong>mikeymandfluffy_mainproductions</strong>. My DMs are open 24/7. Just leave me a DM and I'll try to respond to it as fast as I can.</p>
-        <p class="alt-invite">Is the embed not working? Use the button below instead:</p>
+        <p>Then, start a DM with <strong>mikeymandfluffy_mainproductions</strong>. My DMs are open 24/7. Just leave me a DM and I'll try to respond as fast as I can.</p>
+        <p class="alt-invite">Is the embed not working? Use the button below instead. It has infinite uses and doesn't expire.</p>
         <div class="alt-invite">
             <button onclick="window.open('https://discord.gg/MnXjrJTqmG', '_blank')">Fluffy's Community Invite</button>
         </div>
+
     </div>
 
     <footer>
@@ -139,6 +169,7 @@
     <script>
         function showTab(tabId) {
             document.getElementById('home').style.display = tabId === 'home' ? 'block' : 'none';
+            document.getElementById('games').style.display = tabId === 'games' ? 'block' : 'none';
             document.getElementById('contact').style.display = tabId === 'contact' ? 'block' : 'none';
             document.getElementById('youtube').style.display = tabId === 'youtube' ? 'block' : 'none';
         }
