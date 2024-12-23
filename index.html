@@ -55,6 +55,45 @@
             background: #007acc;
         }
 
+        .form {
+            margin-top: 20px;
+        }
+
+        .form button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #00bfff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form button:hover {
+            background: #007acc;
+        }
+
+        .games {
+            margin-top: 20px;
+        }
+
+        .games button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background: #00bfff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .games button:hover {
+            background: #007acc;
+        }
+
+
         .content-box {
             backdrop-filter: blur(10px);
             background: rgba(0, 0, 0, 0.5);
@@ -64,13 +103,6 @@
             width: 90%;
             max-width: 900px;
             text-align: center;
-        }
-
-        iframe {
-            margin-top: 20px;
-            width: 560px;
-            height: 315px;
-            border: none;
         }
 
         .alt-invite {
@@ -144,14 +176,28 @@
         </div>
     </div>
 
-    <div class="content-box" id="games" style= "display: none;">
-        <h1>Uh oh</h1>
-        <p>Looks like Fluffy doesn't have any browser game ideas. We need ideas for browser games, so if you want to suggest some games, feel free to reach out to us!</p>
+    <div class="content-box" id="games" style="display: none;">
+        <p>Welcome to the games corner! Here, you can choose between one of many games on this page. If you have any ideas on games for this website or if there's an issue with one of the games, you can choose one of the forms below.</p>
         <div class="contact">
             <button onclick="showTab('contact')">Contact</button>
         </div>
+        <p>You could also fill out one of the forms below if you can't contact me:</p>
+        <div class="form">
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSePCDYeByWCIy5fU9YRkykdc8YQz_QXek2716bCo6aW_gjclw/viewform?embedded=true', '_blank')">Game Request</button>
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdrmdWv5llq53pBEpEZLo1vfRWrB9TbKAVjnU9whZZkTvX6Ig/viewform?embedded=true', '_blank')">Takedown Request</button>
+            <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScnjDVAs2JQwoxfB3c2MSZsI1O8hrvNQAJzzpex_euDKSgcJA/viewform?embedded=true', '_blank')">Report</button>
+        </div>
+
     </div>
     
+    <div class="content-box" id="games2" style="display: none;">
+        <h1>Game Collection</h1>
+        <p>You're just a click away! Click the button below to view the collection of games Fluffy has collected.</p>
+        <div class="games">
+            <button onclick="window.location.href='games/index.html'">Games</button>
+        </div>
+    </div>
+
     <div class="content-box" id="youtube" style="display: none;">
         <p>If you want to see content like gaming content, joke content, or other extra content, consider checking out <a href="https://www.youtube.com/@MikeyMandFluffyMainProductions" class="button-link" target="_blank">our channel</a>!</p>
         <p>Latest Video:</p>
@@ -160,13 +206,12 @@
 
     <div class="content-box" id="contact" style="display: none;">
         <p>If you want to get in contact with me, first join the Fluffy's Community Discord server below:</p>
-        <iframe src="https://discord.com/widget?id=1166243655259000852&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <iframe src="https://discord.com/widget?id=1166243655259000852&theme=dark" width="560" height="315" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         <p>Then, start a DM with <strong>mikeymandfluffy_mainproductions</strong>. My DMs are open 24/7. Just leave me a DM and I'll try to respond as fast as I can.</p>
         <p class="alt-invite">Is the embed not working? Use the button below instead. It has infinite uses and doesn't expire.</p>
         <div class="alt-invite">
             <button onclick="window.open('https://discord.gg/MnXjrJTqmG', '_blank')">Fluffy's Community Invite</button>
         </div>
-
     </div>
 
     <footer>
@@ -175,10 +220,19 @@
 
     <script>
         function showTab(tabId) {
-            document.getElementById('home').style.display = tabId === 'home' ? 'block' : 'none';
-            document.getElementById('games').style.display = tabId === 'games' ? 'block' : 'none';
-            document.getElementById('contact').style.display = tabId === 'contact' ? 'block' : 'none';
-            document.getElementById('youtube').style.display = tabId === 'youtube' ? 'block' : 'none';
+            // Hide all content-boxes first
+            const allTabs = document.querySelectorAll('.content-box');
+            allTabs.forEach(tab => tab.style.display = 'none');
+
+            // Show the tabs that match the tabId
+            if (tabId === 'games') {
+                // Show both games and games2 tabs when the Games button is clicked
+                document.getElementById('games').style.display = 'block';
+                document.getElementById('games2').style.display = 'block';
+            } else {
+                // Show only the specific tab
+                document.getElementById(tabId).style.display = 'block';
+            }
         }
     </script>
 </body>
